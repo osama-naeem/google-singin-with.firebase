@@ -1,0 +1,18 @@
+name: Android Build
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubunut-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: set ub jdk
+        uses: actions/setub-java@v1
+        with:
+          java-version: 1.8
+       -   name: Run Tests
+          run: ./gradlew test
+- name: Build Projact
+    run: ./gradlew assemble
+
